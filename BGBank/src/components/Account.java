@@ -1,13 +1,14 @@
 package components;
 
-public abstract class Accounts {
+// 1.2.1 Creation of the account class
+public abstract class Account {
 
 	protected String label;
 	protected double balance;
 	protected static int accountNumber = 0;
 	protected Client client;
 
-	protected Accounts(String label, Client client) {
+	protected Account(String label, Client client) {
 		this.label = label;
 		this.client = client;
 	}
@@ -30,10 +31,6 @@ public abstract class Accounts {
 
 	protected static int getAccountNumber() {
 		return accountNumber;
-	}
-
-	protected static void setAccountNumber(int accountNumber) {
-		Accounts.accountNumber = accountNumber;
 	}
 
 	protected Client getClient() {
