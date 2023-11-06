@@ -4,13 +4,15 @@ package components;
 public abstract class Account {
 
 	protected String label;
-	protected double balance;
-	protected static int accountNumber = 0;
+	protected double balance = 0;
+	protected int accountNumber;
+	protected static int count = 0;
 	protected Client client;
 
 	protected Account(String label, Client client) {
 		this.label = label;
 		this.client = client;
+		this.accountNumber = count++;
 	}
 
 	protected String getLabel() {
@@ -29,8 +31,8 @@ public abstract class Account {
 		this.balance = balance;
 	}
 
-	protected static int getAccountNumber() {
-		return accountNumber;
+	protected int getAccountNumber() {
+		return this.accountNumber;
 	}
 
 	protected Client getClient() {
